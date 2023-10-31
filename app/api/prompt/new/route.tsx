@@ -1,4 +1,3 @@
-import React from "react";
 import { connectToDB } from "@/utils/database";
 import Prompt from "@/models/prompt";
 
@@ -9,8 +8,8 @@ export const POST = async (req: any) => {
     await connectToDB();
     const newPrompt = new Prompt({
       creator: userId,
-      tag,
       prompt,
+      tag,
     });
     await newPrompt.save();
 
